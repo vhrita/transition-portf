@@ -1,0 +1,41 @@
+.bg-animation
+    color: #ffffff
+    position: relative
+    width: 100%
+    height: 100%
+    background-color: inherit
+    text-align: center
+
+    .texts
+        position: absolute
+        width: 100%
+        height: auto
+        top: 30%
+        left: 50%
+        transform: translate(-50%, -30%)
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        p
+            width: 100%
+            font-size: 5vh
+            margin: 0 1%
+        
+
+    img
+        position: absolute
+        min-width: 20%
+        max-width: 85%
+        bottom: 0
+        transform: translateX(-50%)
+        object-fit: cover
+        object-position: 0 1vh
+        
+@media (max-width: 494px)
+  .bg-animation
+      .texts
+          p
+              strong
+                  display: inline-block
