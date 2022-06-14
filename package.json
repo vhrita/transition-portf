@@ -1,6 +1,7 @@
 {
   "name": "transition-portf",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
+  "homepage": "https://vhrita.github.io/transition-portf",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -12,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "framer-motion": "^6.3.11",
+    "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
@@ -25,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
