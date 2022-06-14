@@ -3,22 +3,17 @@ import { loadFull } from "tsparticles";
 
 export const ConnectedLines = () => {
   const particlesInit = async (main) => {
-    console.log(main);
     await loadFull(main);
   };
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         background: {
           color: {
-            value: "#020202",
+            value: "#101010",
           },
         },
         fpsLimit: 60,
@@ -36,7 +31,7 @@ export const ConnectedLines = () => {
           },
           modes: {
             push: {
-              quantity: 3,
+              quantity: 2,
             },
           },
         },
@@ -69,7 +64,7 @@ export const ConnectedLines = () => {
               enable: true,
               area: 600,
             },
-            value: 90,
+            value: 70,
           },
           opacity: {
             value: 0.5,
