@@ -1,0 +1,62 @@
+@import '../../global/colors'
+    
+nav
+    background: inherit
+    margin: 0
+    padding: 1vh 0 1vh 1vw
+    position: absolute
+    left: 1%
+    top: 50%
+    transform: translateY(-50%)
+    width: 8vw
+    height: auto
+    z-index: 3
+    display: flex
+    flex-direction: column
+    gap: 1vh
+    border-left: solid $font-color 0.8px
+
+    .nav-link
+        text-decoration: none
+        width: 20%
+        height: 20%
+        text-align: center
+        padding: 5%
+        border-radius: 100%
+        margin: 0
+        white-space: nowrap
+        background-color: $transparent-grey
+        background-clip: padding-box
+        border: none
+        color: $font-color
+        cursor: pointer
+
+        *   
+            &:first-child
+                font-size: 2.4vh
+
+        span
+            font-size: 0
+            visibility: hidden
+            opacity: 0
+            transition: opacity 0.8s ease-in-out
+
+        &:hover
+            display: inline-block
+            width: 100%
+            padding: 5% 15% 5% 7%
+            border-right: solid $font-color 0.2px
+            border-radius: 0
+            border-top-left-radius: 25px
+            border-bottom-left-radius: 25px
+            text-align: left
+            transition: width 0.5s
+
+            *   
+                &:first-child
+                    margin-right: 0.5vw
+
+            span
+                font-size: 2.2vh
+                visibility: visible
+                opacity: 1
