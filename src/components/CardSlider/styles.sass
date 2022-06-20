@@ -1,0 +1,46 @@
+@import "../../global/colors"
+
+.slider-deck
+    position: relative
+    width: 80%
+    height: 80%
+    background-color: inherit
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 1%
+
+    .deck-btn
+        position: absolute
+        cursor: pointer
+        width: 2.5em
+        height: 2.5em
+        color: $font-color
+        background-color: inherit
+        border: solid .1px $transparent-grey
+        padding: .5%
+        border-radius: 100%
+        transition: all .5s
+        top: 50%
+        transform: translateY(-50%)
+
+        &:nth-of-type(1)
+            left: 0
+
+        &:nth-of-type(2)
+            right: 0
+
+        &:hover
+            border: none
+            color: $font-color
+            background-color: $transparent-grey
+    
+    .main
+        width: 45%
+        height: 45%
+        background: yellow
+
+    .secondary
+        background-color: #ccc
+        width: 20%
+        height: 20%
