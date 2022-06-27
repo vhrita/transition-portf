@@ -1,6 +1,5 @@
 @import '../../global/colors'
 @import '~rfs/sass'
-    
 
 .nav-link
     text-decoration: none
@@ -73,6 +72,20 @@
                 width: auto
                 visibility: visible
                 opacity: 1
+
+.collapse-mobile
+    padding: 0
+    margin: 0
+    border: none
+    background-color: $transparent-grey
+    color: $font-color
+    position: absolute
+    z-index: 2
+    top: 3vh
+    width: 3vw
+    height: 3vw
+    +rfs(20px)
+
 
 .mobile
     background-color: $transparent-grey
