@@ -1,46 +1,78 @@
 @import "../../global/colors"
+@import '~rfs/sass'
 
 .slider-deck
     position: relative
-    width: 80%
-    height: 80%
+    width: 100%
+    height: 90%
     background-color: inherit
     display: flex
     align-items: center
-    justify-content: center
-    gap: 1%
 
-    .deck-btn
+    .controls
         position: absolute
-        cursor: pointer
-        width: 2.5em
-        height: 2.5em
-        color: $font-color
-        background-color: inherit
-        border: solid .1px $transparent-grey
-        padding: .5%
-        border-radius: 100%
-        transition: all .5s
-        top: 50%
-        transform: translateY(-50%)
+        display: flex
+        flex-wrap: nowrap
+        justify-content: space-between
+        gap: 1vw
+        align-items: center
+        bottom: 0
+        right: 3vw
 
-        &:nth-of-type(1)
-            left: 0
-
-        &:nth-of-type(2)
-            right: 0
-
-        &:hover
-            border: none
+        button
+            cursor: pointer
             color: $font-color
-            background-color: $transparent-grey
-    
-    .main
-        width: 45%
-        height: 45%
-        background: yellow
+            width: 3vw
+            height: 3vw
+            background-color: inherit
+            border: solid .1px $transparent-grey
+            padding: 0
+            border-radius: 100%
+            transition: all .5s
+            text-align: center
+            display: flex
+            align-items: center
+            justify-content: center
+             
+            * 
+                margin: 0
+                padding: 0
+                width: 50%
+                height: 50%
+                
+            &:hover
+                border: none
+                color: $font-color
+                background-color: $transparent-grey
 
-    .secondary
-        background-color: #ccc
-        width: 20%
-        height: 20%
+            &:disabled
+                cursor: not-allowed
+                background: inherit
+                color: $transparent-grey
+                border: solid .1px $transparent-grey
+                    
+        span
+            color: $font-color
+            font-weight: 200
+            +rfs(46px)
+
+    span
+        &:last-child
+            position: absolute
+            bottom: -3vw
+            left: 50%
+            transform: translateX(-50%)
+            color: $font-color
+            +rfs(50px)
+            
+
+    .card
+        position: absolute
+        width: 75vw
+        height: 75vh
+        overflow: hidden
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
