@@ -7466,6 +7466,11 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
+react-swipeable@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-7.0.0.tgz#7a12570ee435d35ac700511de338384aa78d12cd"
+  integrity sha512-NI7KGfQ6gwNFN0Hor3vytYW3iRfMMaivGEuxcADOOfBCx/kqwXE8IfHFxEcxSUkxCYf38COLKYd9EMYZghqaUA==
+
 react-tsparticles@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/react-tsparticles/-/react-tsparticles-2.0.6.tgz#1049db562315fe5aea276e2918fe0624d3e935d6"
