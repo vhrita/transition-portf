@@ -76,3 +76,69 @@
             width: 100%
             height: 100%
             object-fit: cover
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+
+        .active
+            transition: opacity 1.5s
+            opacity: 1
+        
+        .inactive
+            transition: opacity 0.5s
+            opacity: 0
+
+        div
+            color: $font-color
+            transition: all 1s
+
+            *
+                &:nth-child(1)
+                    transition: all 1s
+
+        .opened
+            color: $font-color
+            position: absolute
+            width: 100%
+            height: 100%
+            background: rgba($background-color, 0.7)
+            display: flex
+            align-items: center
+            justify-content: start
+
+            *
+                &:nth-child(1)
+                    position: absolute
+                    padding: 0
+                    margin: 0
+                    left: 50%
+                    +rfs(42px)
+                    transform: translate(-25%, -400%)
+                    background-clip: content-box
+
+        .closed
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform: translateX(-50%)
+            padding: 0.5% 1% 0% 1%
+            background: rgba($background-color, 0.7)
+
+            *
+                &:nth-child(1)
+                    position: absolute
+                    padding: 0
+                    margin: 0
+                    top: -25%
+                    left: 50%
+                    +rfs(42px)
+                    transform: translateX(-25%)
+                    background-clip: content-box
+
+                &:nth-child(2)
+                    +rfs(54px)
+
+                &:nth-child(n+3)
+                    display: none
+                    
