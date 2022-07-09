@@ -7,12 +7,31 @@ import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
 
+import { gql, useQuery } from "@apollo/client"
+
+const GET_TEXTS_QUERY = gql`
+    query {
+        home(where: {id: "cl58igjiusvrn0ck9rf90effl"}) {
+            texts
+            title
+            button
+        }
+    }
+`
+
 const children = {
     hidden: {opacity: 0},
     show: { opacity: 1 }
 }
 
 export const Home = () => {
+    const { loading, error, data } = useQuery(GET_TEXTS_QUERY)
+
+    if (loading) return console.log('Loading...');
+    if (error) return console.log(`Error! ${error.message}`);
+
+    console.log(data);
+
     return (
         <>
             <motion.main
@@ -33,8 +52,8 @@ export const Home = () => {
                             animate='show'
                             transition={{delay: 1, duration: 1.5}}
                         >
-                            <p>Olá, me chamo <strong>Vitor Rita!</strong></p>
-                            <p>Segundo texto aqui</p>
+                            <p>{data.home.title} <strong>Vitor Rita!</strong></p>
+                            <p>{data.home.texts[0]}</p>
                         </motion.div>
                         <motion.button
                             variants={children}
@@ -42,7 +61,7 @@ export const Home = () => {
                             animate='show'
                             transition={{delay: 1.5, duration: 1.5}}
                         >
-                            COMECE POR AQUI
+                            {data.home.button}
                             <FontAwesomeIcon icon={faChevronCircleDown}></FontAwesomeIcon>
                         </motion.button>
                     </div>
