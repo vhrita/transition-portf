@@ -86,7 +86,7 @@ export const CardSlider = ({ cards }) => {
                             <button value={index} onClick={(e) => handleOpenClose(e.value, true)}>
                                 <FontAwesomeIcon icon={faCircleArrowUp} />
                             </button>
-                            <button value={index} onClick={(e) => handleClose(e.value, false)}>
+                            <button value={index} onClick={(e) => handleOpenClose(e.value, true)}>
                                 <FontAwesomeIcon icon={faCircleArrowDown} />
                             </button>
                             <p>{card.title}</p>
