@@ -6,8 +6,11 @@ import { motion } from "framer-motion"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons"
+import TypewriterComponent from "typewriter-effect"
 
 import { gql, useQuery } from "@apollo/client"
+
+import { useNavigate } from "react-router"
 
 const GET_TEXTS_QUERY = gql`
     query {
@@ -25,12 +28,16 @@ const children = {
 }
 
 export const Home = () => {
+    const navigate = useNavigate()
+    // const handleStart = e => {
+    //     e.preventDefault()
+    //     navigate('/portfolio')
+    // }
+
     const { loading, error, data } = useQuery(GET_TEXTS_QUERY)
 
-    if (loading) return console.log('Loading...');
-    if (error) return console.log(`Error! ${error.message}`);
-
-    console.log(data);
+    if (loading) return console.log('Loading...')
+    if (error) return console.log(`Error! ${error.message}`)
 
     return (
         <>
@@ -53,13 +60,21 @@ export const Home = () => {
                             transition={{delay: 1, duration: 1.5}}
                         >
                             <p>{data.home.title} <strong>Vitor Rita!</strong></p>
-                            <p>{data.home.texts[0]}</p>
+                            <TypewriterComponent
+                                options={{
+                                    strings: data.home.texts,
+                                    autoStart: true,
+                                    loop: true,
+                                    pauseFor: 2000,
+                                }}
+                            />
                         </motion.div>
                         <motion.button
                             variants={children}
                             initial='hidden'
                             animate='show'
                             transition={{delay: 1.5, duration: 1.5}}
+                            onClick={() => {navigate('/portfolio')}}
                         >
                             {data.home.button}
                             <FontAwesomeIcon icon={faChevronCircleDown}></FontAwesomeIcon>
