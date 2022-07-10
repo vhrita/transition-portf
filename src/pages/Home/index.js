@@ -29,11 +29,6 @@ const children = {
 
 export const Home = () => {
     const navigate = useNavigate()
-    // const handleStart = e => {
-    //     e.preventDefault()
-    //     navigate('/portfolio')
-    // }
-
     const { loading, error, data } = useQuery(GET_TEXTS_QUERY)
 
     if (loading) return console.log('Loading...')
