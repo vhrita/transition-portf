@@ -1,0 +1,144 @@
+@import "../../global/colors"
+@import '~rfs/sass'
+
+.slider-deck
+    position: relative
+    width: 100%
+    height: 90%
+    background-color: inherit
+    display: flex
+    align-items: center
+
+    .controls
+        position: absolute
+        display: flex
+        flex-wrap: nowrap
+        justify-content: space-between
+        gap: 1vw
+        align-items: center
+        bottom: 0
+        right: 3vw
+
+        button
+            cursor: pointer
+            color: $font-color
+            width: 3vw
+            height: 3vw
+            background-color: inherit
+            border: solid .1px $transparent-grey
+            padding: 0
+            border-radius: 100%
+            transition: all .5s
+            text-align: center
+            display: flex
+            align-items: center
+            justify-content: center
+             
+            * 
+                margin: 0
+                padding: 0
+                width: 50%
+                height: 50%
+                
+            &:hover
+                border: none
+                color: $font-color
+                background-color: $transparent-grey
+
+            &:disabled
+                cursor: not-allowed
+                background: inherit
+                color: $transparent-grey
+                border: solid .1px $transparent-grey
+                    
+        span
+            color: $font-color
+            font-weight: 200
+            +rfs(46px)
+
+    span
+        &:last-child
+            position: absolute
+            bottom: -3vw
+            left: 50%
+            transform: translateX(-50%)
+            color: $font-color
+            +rfs(50px)
+            
+
+    .card
+        position: absolute
+        width: 75vw
+        height: 75vh
+        overflow: hidden
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+
+        .active
+            transition: opacity 1.5s
+            opacity: 1
+        
+        .inactive
+            transition: opacity 0.5s
+            opacity: 0
+
+        div
+            color: $font-color
+            transition: all 1s
+
+            *
+                &:nth-child(1)
+                    transition: all 1s
+
+        .opened
+            color: $font-color
+            position: absolute
+            width: 100%
+            height: 100%
+            background: rgba($background-color, 0.7)
+            display: flex
+            align-items: center
+            justify-content: start
+
+            *
+                &:nth-child(1)
+                    position: absolute
+                    padding: 0
+                    margin: 0
+                    left: 50%
+                    +rfs(42px)
+                    transform: translate(-25%, -400%)
+                    background-clip: content-box
+
+        .closed
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform: translateX(-50%)
+            padding: 0.5% 1% 0% 1%
+            background: rgba($background-color, 0.7)
+
+            *
+                &:nth-child(1)
+                    position: absolute
+                    padding: 0
+                    margin: 0
+                    top: -25%
+                    left: 50%
+                    +rfs(42px)
+                    transform: translateX(-25%)
+                    background-clip: content-box
+
+                &:nth-child(2)
+                    +rfs(54px)
+
+                &:nth-child(n+3)
+                    display: none
+                    
