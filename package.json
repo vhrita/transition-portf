@@ -1,7 +1,7 @@
 {
   "name": "transition-portf",
   "version": "0.2.1",
-  "homepage": "https://vhrita.github.io/transition-portf",
+  "homepage": "https://vhrita.github.io/",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.9",
