@@ -1,7 +1,7 @@
 import "./styles.sass"
 import { useEffect, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronLeft, faChevronRight, faCircleArrowUp, faCircleArrowDown } from "@fortawesome/free-solid-svg-icons"
+import { faChevronLeft, faChevronRight, faPlus } from "@fortawesome/free-solid-svg-icons"
 import { motion } from "framer-motion"
 import { useSwipeable } from "react-swipeable"
 import { isMobile } from "react-device-detect"
@@ -74,6 +74,10 @@ export const CardSlider = ({ cards }) => {
                             damping: '20'
                         }}
                     >
+                        <button value={index} onClick={(e) => handleOpenClose(e.value, true)}>
+                            Ver mais
+                            <FontAwesomeIcon icon={faPlus} />
+                        </button>
                         {card.images.map((image, i) => {
                             return <motion.img 
                                 className={`${i===0 ? 'active' : undefined}`}
@@ -83,16 +87,10 @@ export const CardSlider = ({ cards }) => {
                             />
                         }, index)}
                         <div className='closed'>
-                            <button value={index} onClick={(e) => handleOpenClose(e.value, true)}>
-                                <FontAwesomeIcon icon={faCircleArrowUp} />
-                            </button>
-                            <button value={index} onClick={(e) => handleOpenClose(e.value, true)}>
-                                <FontAwesomeIcon icon={faCircleArrowDown} />
-                            </button>
                             <p>{card.title}</p>
                             <p>{card.description}</p>
                             {card.techs.map((tech) => {
-                                <button>{tech}</button>
+                                return <button>{tech}</button>
                             })}
                         </div>
                     </motion.div>
