@@ -1,14 +1,15 @@
 import "./styles.sass"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft, faChevronRight, faPlus } from "@fortawesome/free-solid-svg-icons"
 import { motion } from "framer-motion"
 import { useSwipeable } from "react-swipeable"
 import { isMobile } from "react-device-detect"
 
+import { MultipleImagesContainer } from "../MultipleImagesContainer"
+
 export const CardSlider = ({ cards }) => {
     const [ position, setPosition ] = useState(0)
-    const [ imgIndex, setImgIndex ] = useState(-1)
     
     const onRight = () => {
         position<cards.length-1
@@ -23,30 +24,6 @@ export const CardSlider = ({ cards }) => {
         onSwipedRight: onLeft,
         onSwipedLeft: onRight,
     })
-
-    useEffect(() => {
-        setTimeout(() => {
-            const card = document.querySelectorAll('.card')[position]
-            const images = card.querySelectorAll('img')
-
-            if(imgIndex+1<images.length) {
-                if(imgIndex<0) {
-                    images[images.length-1].classList.remove('active');
-                    images[images.length-1].classList.add('inactive');
-                    images[0].classList.remove('inactive');
-                    images[0].classList.add('active');
-                } else {
-                    images[imgIndex].classList.remove('active');
-                    images[imgIndex].classList.add('inactive');
-                    images[imgIndex+1].classList.remove('inactive');
-                    images[imgIndex+1].classList.add('active');
-                }
-                setImgIndex(imgIndex+1)
-            } else {
-                setImgIndex(-1)
-            }
-        }, 3000)
-    }, [position, imgIndex])
 
 
     const handleOpenClose = (index, open) => {
@@ -78,14 +55,11 @@ export const CardSlider = ({ cards }) => {
                             Ver mais
                             <FontAwesomeIcon icon={faPlus} />
                         </button>
-                        {card.images.map((image, i) => {
-                            return <motion.img 
-                                className={`${i===0 ? 'active' : undefined}`}
-                                key={image.id}
-                                src={image.url}
-                                alt={card.title+" DEMO "+i}
-                            />
-                        }, index)}
+                        <MultipleImagesContainer 
+                            className="active"
+                            images={card.images.map(image => image.url)}
+                            running={index===position}
+                        />
                         <div className='closed'>
                             <p>{card.title}</p>
                             <p>{card.description}</p>
