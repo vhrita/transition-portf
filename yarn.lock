@@ -12522,36 +12522,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"transition-portf@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "transition-portf@workspace:."
-  dependencies:
-    "@apollo/client": "npm:^3.8.7"
-    "@fortawesome/fontawesome-svg-core": "npm:^6.4.2"
-    "@fortawesome/free-brands-svg-icons": "npm:^6.4.2"
-    "@fortawesome/free-solid-svg-icons": "npm:^6.4.2"
-    "@fortawesome/react-fontawesome": "npm:^0.2.0"
-    "@testing-library/jest-dom": "npm:^6.1.4"
-    "@testing-library/react": "npm:^14.1.2"
-    "@testing-library/user-event": "npm:^14.5.1"
-    framer-motion: "npm:^10.16.5"
-    gh-pages: "npm:^6.1.0"
-    graphql: "npm:^16.8.1"
-    react: "npm:^18.2.0"
-    react-device-detect: "npm:^2.2.3"
-    react-dom: "npm:^18.2.0"
-    react-router-dom: "npm:^6.20.0"
-    react-scripts: "npm:^5.0.1"
-    react-swipeable: "npm:^7.0.1"
-    react-tsparticles: "npm:^2.12.2"
-    rfs: "npm:^10.0.0"
-    sass: "npm:^1.69.5"
-    tsparticles: "npm:^2.12.0"
-    typewriter-effect: "npm:^2.21.0"
-    web-vitals: "npm:^3.5.0"
-  languageName: unknown
-  linkType: soft
-
 "trim-repeated@npm:^1.0.0":
   version: 1.0.0
   resolution: "trim-repeated@npm:1.0.0"
@@ -13149,6 +13119,36 @@ __metadata:
   checksum: 81ca2e81134167cc8f75fa79fbcc8a94379d6c61de67090986a2273850989dd3bae8440c163121b77434b68263e34787a675cbdcb34bb2f764c6b9c843a11b66
   languageName: node
   linkType: hard
+
+"unfinished-portfolio@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "unfinished-portfolio@workspace:."
+  dependencies:
+    "@apollo/client": "npm:^3.8.7"
+    "@fortawesome/fontawesome-svg-core": "npm:^6.4.2"
+    "@fortawesome/free-brands-svg-icons": "npm:^6.4.2"
+    "@fortawesome/free-solid-svg-icons": "npm:^6.4.2"
+    "@fortawesome/react-fontawesome": "npm:^0.2.0"
+    "@testing-library/jest-dom": "npm:^6.1.4"
+    "@testing-library/react": "npm:^14.1.2"
+    "@testing-library/user-event": "npm:^14.5.1"
+    framer-motion: "npm:^10.16.5"
+    gh-pages: "npm:^6.1.0"
+    graphql: "npm:^16.8.1"
+    react: "npm:^18.2.0"
+    react-device-detect: "npm:^2.2.3"
+    react-dom: "npm:^18.2.0"
+    react-router-dom: "npm:^6.20.0"
+    react-scripts: "npm:^5.0.1"
+    react-swipeable: "npm:^7.0.1"
+    react-tsparticles: "npm:^2.12.2"
+    rfs: "npm:^10.0.0"
+    sass: "npm:^1.69.5"
+    tsparticles: "npm:^2.12.0"
+    typewriter-effect: "npm:^2.21.0"
+    web-vitals: "npm:^3.5.0"
+  languageName: unknown
+  linkType: soft
 
 "unicode-canonical-property-names-ecmascript@npm:^2.0.0":
   version: 2.0.0
